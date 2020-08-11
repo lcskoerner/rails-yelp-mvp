@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <%= simple_form_for [@restaurant] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category,
+      collection: [['chinese', 'Chinese'], ['italian', 'Italian'], ['japanese', 'Japanese'], ['french', 'French'], ['belgian', 'Belgian']],
+      label_method: :second, value_method: :first,
+      prompt: "Select a category",
+      error: "Category can't be blank"
+    %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.submit "Create Restaurant", class: "btn btn-primary" %>
+<% end %>
+</div>
