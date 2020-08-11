@@ -11,7 +11,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to restaurant_path(@restaurant)
     else
-      render :new
+      redirect_to restaurant_path(@restaurant, @review)
+      # TODO carry validation to restaurant_page
     end
   end
 

@@ -1,8 +1,12 @@
 <div class="card mt-4">
-  <h5 class="card-header"><%= @restaurant.name %> <%= @flags[@restaurant.category] %></h5>
+  <div class="card-header d-flex justify-content-between">
+    <h5 class="mb-0"><%= @restaurant.name %></h5>
+    <h5 class="mb-0"><%= @flags[@restaurant.category]%></h5>
+  </div>
+
   <div class="card-body">
-    <p class="card-text mb-0">Address: <%= @restaurant.address %></p>
-    <p class="card-text mb-0">Phone number: <%= @restaurant.phone_number %></p>
+    <p class="card-text mb-0"><i class="fas fa-map-marker-alt"></i> <%= @restaurant.address %></p>
+    <p class="card-text mb-0"><i class="fas fa-phone"></i> <%= @restaurant.phone_number %></p>
     <div class="card-body">
       <h5 class="card-title">Write a review:</h5>
       <%= simple_form_for [@restaurant, @review] do |f| %>
