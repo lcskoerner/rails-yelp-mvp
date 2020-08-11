@@ -3,11 +3,11 @@
     <div class="card mt-4 mb-4">
       <div class="card-header d-flex justify-content-between">
         <h5 class="mb-0"><%= link_to r.name, restaurant_path(r) %></h5>
-        <h5 class="mb-0"><%= @flags[r.category] %></h5>
+        <h5 class="mb-0"><%= set_flags(r.category) %></h5>
       </div>
       <div class="card-body">
-        <p class="card-text mb-0"><i class="fas fa-map-marker-alt"></i> <%= r.address %></p>
-        <p class="card-text mb-0"><i class="fas fa-phone"></i> <%= r.phone_number %></p>
+        <p class="card-text mb-0"><span class="icon-container"><i class="fas fa-map-marker-alt"></i></span> <%= r.address %></p>
+        <p class="card-text mb-0"><span class="icon-container"><i class="fas fa-phone"></i></span> <%= r.phone_number %></p>
       </div>
     </div>
   <% end %>

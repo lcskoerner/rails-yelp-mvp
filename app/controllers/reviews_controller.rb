@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new
+    redirect_to restaurant_path(@restaurant)
   end
 
   def create
@@ -11,8 +12,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to restaurant_path(@restaurant)
     else
-      redirect_to restaurant_path(@restaurant, @review)
-      # TODO carry validation to restaurant_page
+      render "restaurants/show"
     end
   end
 

@@ -1,3 +1,7 @@
+$theme-colors: (
+  "primary": #6610f2,
+);
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -22,4 +26,9 @@ a:hover {
 
 .navbar {
   border-bottom: 1px solid #E3E3E3;
+}
+
+.icon-container {
+  width: 25px;
+  float: left;
 }

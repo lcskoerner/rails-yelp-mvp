@@ -1,6 +1,4 @@
 class RestaurantsController < ApplicationController
-  before_action :set_flags, only: [:index, :new, :show]
-
   def index
     @restaurants = Restaurant.all
   end
@@ -25,16 +23,6 @@ class RestaurantsController < ApplicationController
   end
 
   private
-
-  def set_flags
-    @flags = {
-      'chinese' => '🇨🇳',
-      'italian' => '🇮🇹',
-      'japanese' => '🇯🇵',
-      'french' => '🇫🇷',
-      'belgian' => '🇧🇪'
-    }
-  end
 
   def restaurant_params
     params.require(:restaurant).permit(
