@@ -1,0 +1,12 @@
+<ul>
+  <% @restaurants.each do |r| %>
+    <div class="card mt-4 mb-4">
+      <div class="card-body">
+        <h4 class="card-title"><%= link_to r.name, restaurant_path(r) %></h4>
+        <p class="card-text mb-0">Category: <%= r.category.capitalize %></p>
+        <p class="card-text mb-0">Address: <%= r.address %></p>
+        <p class="card-text mb-0">Phone number: <%= r.phone_number %></p>
+      </div>
+    </div>
+  <% end %>
+</ul>
